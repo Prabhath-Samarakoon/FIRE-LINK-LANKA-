@@ -1,0 +1,515 @@
+/* Schedules Component Specific Styles */
+.schedules-page {
+  background: var(--bg-primary);
+  min-height: 100vh;
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.schedules-page .main-content {
+  margin-left: 288px;
+  transition: margin-left 0.3s ease;
+  padding-top: 100px; /* Account for fixed header */
+}
+
+/* When sidebar is collapsed */
+.schedules-page .sidebar.collapsed ~ .main-content,
+.schedules-page .sidebar.collapsed + .main-content {
+  margin-left: 80px;
+}
+
+.schedules-page .schedules-container {
+  max-width: 1100px;
+  margin: 24px auto 48px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.schedules-page .schedules-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.schedules-page .schedules-header h1 {
+  color: var(--text-primary);
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.schedules-page .schedules-header p {
+  color: var(--text-secondary);
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.schedules-page .add-schedule-btn {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+}
+
+.schedules-page .add-schedule-btn:hover {
+  background: linear-gradient(135deg, #047857, #065f46);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.4);
+}
+
+.schedules-page .add-schedule-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Message styling */
+.schedules-page .message {
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.schedules-page .message.success {
+  background: linear-gradient(135deg, #065f46, #047857);
+  color: #f0fdf4;
+  border: 1px solid #059669;
+}
+
+.schedules-page .message.error {
+  background: linear-gradient(135deg, #7f1d1d, #991b1b);
+  color: #fca5a5;
+  border: 1px solid #dc2626;
+}
+
+/* Schedule Form */
+.schedules-page .schedule-form-container {
+  background: #ffffff;
+  border: 1px solid var(--border-primary);
+  border-radius: 16px;
+  padding: 24px 24px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 780px;
+}
+
+.schedules-page .schedule-form-container h2 {
+  color: #fca5a5;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.schedules-page .schedule-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.schedules-page .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.schedules-page .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.schedules-page .form-group label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.schedules-page .form-group input,
+.schedules-page .form-group select,
+.schedules-page .form-group textarea {
+  padding: 10px 14px;
+  border: 1px solid var(--border-primary);
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: all 0.2s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.schedules-page .form-group input:focus,
+.schedules-page .form-group select:focus,
+.schedules-page .form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-yellow);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+  background: #ffffff;
+}
+
+.schedules-page .form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.schedules-page .form-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.schedules-page .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.schedules-page .btn-cancel {
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+  color: white;
+}
+
+.schedules-page .btn-cancel:hover {
+  background: linear-gradient(135deg, #4b5563, #374151);
+  transform: translateY(-1px);
+}
+
+.schedules-page .btn-save {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: white;
+}
+
+.schedules-page .btn-save:hover {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  transform: translateY(-1px);
+}
+
+.schedules-page .btn-save:disabled {
+  background: #48484a;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Schedules List */
+.schedules-page .schedules-list {
+  padding: 0 20px;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.schedules-page .schedules-list h2 {
+  color: var(--text-primary);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Download Button */
+.schedules-page .download-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.schedules-page .download-btn {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+.schedules-page .download-btn:hover {
+  background: linear-gradient(135deg, #047857, #065f46);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.4);
+}
+
+.schedules-page .download-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.schedules-page .loading,
+.schedules-page .no-schedules {
+  text-align: center;
+  padding: 40px;
+  color: #8e8e93;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.schedules-page .schedules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+  padding: 0 10px;
+  max-width: 980px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.schedules-page .schedule-card {
+  background: #ffffff;
+  border: 1px solid var(--border-primary);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  max-width: 320px;
+}
+
+.schedules-page .schedule-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.schedules-page .schedule-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--border-secondary);
+}
+
+.schedules-page .schedule-card:hover::before {
+  transform: scaleX(1);
+}
+
+.schedules-page .schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.schedules-page .schedule-date {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.schedules-page .schedule-date .date {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.schedules-page .schedule-date .time {
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+.schedules-page .shift-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.schedules-page .shift-badge.day {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: #f0fdf4;
+}
+
+.schedules-page .shift-badge.night {
+  background: linear-gradient(135deg, #1e40af, #1d4ed8);
+  color: #eff6ff;
+}
+
+.schedules-page .shift-badge.24-hour {
+  background: linear-gradient(135deg, #7c2d12, #92400e);
+  color: #fef3c7;
+}
+
+.schedules-page .shift-badge.emergency {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #fef2f2;
+}
+
+.schedules-page .schedule-content {
+  margin-bottom: 16px;
+}
+
+.schedules-page .staff-info h3 {
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.schedules-page .staff-info .position {
+  color: var(--text-tertiary);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.schedules-page .schedule-position,
+.schedules-page .schedule-notes {
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+.schedules-page .schedule-position strong,
+.schedules-page .schedule-notes strong {
+  color: var(--text-primary);
+}
+
+.schedules-page .schedule-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.schedules-page .btn-edit {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+}
+
+.schedules-page .btn-edit:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: translateY(-1px);
+}
+
+.schedules-page .btn-delete {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: white;
+}
+
+.schedules-page .btn-delete:hover {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  transform: translateY(-1px);
+}
+
+.schedules-page .btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .schedules-page .schedules-container {
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  .schedules-page .schedules-header {
+    padding: 0 10px;
+  }
+  
+  .schedules-page .schedules-header h1 {
+    font-size: 28px;
+  }
+  
+  .schedules-page .schedules-header p {
+    font-size: 16px;
+  }
+  
+  .schedules-page .schedule-form-container {
+    padding: 24px 20px;
+  }
+  
+  .schedules-page .form-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .schedules-page .schedules-list {
+    padding: 0 10px;
+  }
+  
+  .schedules-page .schedules-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0;
+    max-width: 100%;
+  }
+  
+  .schedules-page .schedule-card {
+    padding: 18px;
+    max-width: 100%;
+  }
+  
+  .schedules-page .form-actions {
+    flex-direction: column;
+  }
+  
+  .schedules-page .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .schedules-page .schedules-container {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+  
+  .schedules-page .schedules-header h1 {
+    font-size: 24px;
+  }
+  
+  .schedules-page .schedule-form-container {
+    padding: 20px 15px;
+  }
+  
+  .schedules-page .schedule-card {
+    padding: 16px;
+  }
+  
+  .schedules-page .schedule-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}

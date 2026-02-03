@@ -1,0 +1,177 @@
+/* Container */
+.availability-container {
+  padding: 2rem;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Header */
+.availability-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+}
+
+.availability-header h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+}
+
+.availability-header p { font-size: 1.1rem; opacity: 0.9; margin: 0; }
+
+/* Statistics Cards */
+.availability-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: .02em;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #000000 !important;
+  line-height: 1;
+  opacity: 1 !important;
+}
+
+/* Force stat numbers to be clearly visible */
+.availability-stats .stat-card .stat-number { color: #000000 !important; -webkit-text-fill-color: #000000 !important; filter: none !important; text-shadow: none !important; }
+.stat-card.available .stat-number { color: #000000 !important; -webkit-text-fill-color: #000000 !important; }
+.stat-card.onduty .stat-number { color: #000000 !important; -webkit-text-fill-color: #000000 !important; }
+.stat-card.resting .stat-number { color: #000000 !important; -webkit-text-fill-color: #000000 !important; }
+
+/* Staff Grid */
+.staff-grid { 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 1.25rem; 
+  max-width: 100%;
+}
+
+.staff-card {
+  background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: 1.25rem 1.25rem 1rem 1.25rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+.staff-name { 
+  font-size: 1.2rem; 
+  font-weight: 800; 
+  margin: 0 0 0.25rem 0; 
+  color: #000000 !important; 
+  text-shadow: none !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+.staff-age { 
+  font-size: 0.95rem; 
+  color: #000000 !important; 
+  margin: 0.1rem 0; 
+  text-shadow: none !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+.staff-position { 
+  font-size: 0.95rem; 
+  font-weight: 700; 
+  color: #000000 !important; 
+  margin: 0.25rem 0; 
+  text-shadow: none !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+/* Three status buttons */
+.status-buttons { 
+  display: flex; 
+  gap: 0.5rem; 
+  flex-wrap: nowrap; 
+  justify-content: space-between;
+  width: 100%;
+}
+
+.status-btn {
+  padding: 0.5rem 0.9rem;
+  border: 2px solid var(--border-primary);
+  border-radius: 9999px;
+  background: white;
+  color: #374151;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.status-btn.active.available { background: #16a34a; color: #fff; border-color: #16a34a; }
+.status-btn.active.onduty { background: #2563eb; color: #fff; border-color: #2563eb; }
+.status-btn.active.resting { background: #f59e0b; color: #fff; border-color: #f59e0b; }
+
+/* Download button */
+.download-btn {
+  margin-top: 1rem;
+  padding: 0.8rem 1.6rem;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border: none;
+  border-radius: 9999px;
+  color: white;
+  font-weight: 800;
+  letter-spacing: .02em;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(34, 197, 94, 0.35);
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+}
+
+.download-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(34, 197, 94, 0.45); }
+.download-btn:disabled { opacity: 0.7; cursor: not-allowed; box-shadow: none; }
+
+/* Loading/Error */
+.loading-spinner { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 300px; color: var(--text-primary); }
+.spinner { width: 40px; height: 40px; border: 4px solid rgba(255, 255, 255, 0.2); border-top: 4px solid var(--primary-500); border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 1rem; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.error-message { text-align: center; color: var(--text-primary); min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+/* Responsive */
+@media (max-width: 1200px) { 
+  .staff-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px) { 
+  .staff-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) { 
+  .availability-container { padding: 1rem; } 
+  .availability-header h1 { font-size: 2.1rem; } 
+  .availability-stats { grid-template-columns: 1fr; gap: 1rem; }
+  .staff-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) { 
+  .availability-header h1 { font-size: 1.85rem; } 
+}

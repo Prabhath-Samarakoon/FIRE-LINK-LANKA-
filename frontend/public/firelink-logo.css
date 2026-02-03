@@ -1,0 +1,121 @@
+/* FireLink Lanka Logo Styles */
+/* This CSS file provides styling for the FireLink Lanka logo */
+
+.firelink-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    color: #dc2626;
+}
+
+.firelink-logo .logo-icon {
+    width: 24px;
+    height: 24px;
+    background: #dc2626;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+}
+
+.firelink-logo .logo-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #dc2626;
+}
+
+/* Navigation Bar Logo */
+.nav-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-title .fire-icon {
+    font-size: 1.25rem;
+    color: #dc2626;
+}
+
+/* Header Logo */
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-logo .logo-icon {
+    width: 32px;
+    height: 32px;
+    background: #dc2626;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+}
+
+.header-logo .logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #dc2626;
+}
+
+/* Footer Logo */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.footer-logo .logo-icon {
+    width: 20px;
+    height: 20px;
+    background: #dc2626;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+}
+
+.footer-logo .logo-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #dc2626;
+}
+
+/* Responsive Logo */
+@media (max-width: 768px) {
+    .firelink-logo .logo-text {
+        font-size: 16px;
+    }
+    
+    .header-logo .logo-text {
+        font-size: 20px;
+    }
+    
+    .footer-logo .logo-text {
+        font-size: 14px;
+    }
+}
+
+/* Logo Animation */
+.firelink-logo:hover .logo-icon {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+/* Fire Brigade Theme Colors */
+:root {
+    --firelink-red: #dc2626;
+    --firelink-gold: #fbbf24;
+    --firelink-dark: #1f2937;
+    --firelink-light: #f9fafb;
+}

@@ -1,0 +1,11 @@
+/* Restored Call Operator Subsystem Theme */
+.call-operator-root { min-height: 100vh; background: #FFFFFF; color: #000000; font-family: 'Inter', Roboto, Arial, Helvetica, sans-serif; }
+.call-operator-root .main-navigation { background: #FFFFFF; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 40; }
+.call-operator-root .main-content { min-height: calc(100vh - 60px); display: flex; flex-direction: column; gap: 16px; background: #FFFFFF; }
+.call-operator-root .co-no-scroll { height: calc(100vh - 60px); overflow: hidden; }
+.call-operator-root button, .call-operator-root .btn { min-height: 56px; padding: 0 20px; border-radius: 14px; font-weight: 800; background: #D32F2F; border: 1px solid #D32F2F; color: #fff; }
+.call-operator-root input, .call-operator-root select, .call-operator-root textarea { min-height: 56px; font-size: 18px; }
+
+/* Remove left gap in nav for Call Operator */
+.call-operator-root .nav-container { max-width: none; margin: 0; padding-left: 0; }
+

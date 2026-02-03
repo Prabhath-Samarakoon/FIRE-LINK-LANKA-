@@ -1,0 +1,58 @@
+/* Vehicle Officer Layout Styles */
+.vehicle-officer-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #1f2937;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 280px;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 24px;
+  overflow-y: auto;
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+.main-content.sidebar-collapsed {
+  margin-left: 70px;
+}
+
+/* Emergency Mode Fullscreen */
+.main-content.emergency-fullscreen {
+  margin-left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: #ffffff;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 280px;
+  }
+  
+  .main-content.sidebar-collapsed {
+    margin-left: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    margin-left: 280px;
+  }
+  
+  .main-content.sidebar-collapsed {
+    margin-left: 70px;
+  }
+}
+

@@ -1,0 +1,37 @@
+.home-ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.home-11 {
+  margin: 0;
+}
+
+.home-a {
+  display: block;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  color: #495057;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.home-a:hover {
+  background-color: #e9ecef;
+  color: #007bff;
+}
+
+.home-a.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.home-a h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}

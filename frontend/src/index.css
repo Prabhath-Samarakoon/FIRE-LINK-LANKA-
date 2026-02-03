@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Global Design System for Fire Brigade App */
+
+/* 1) CSS Reset (lightweight) */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+html, body { margin: 0; padding: 0; }
+
+/* 2) Theme Tokens */
+:root {
+  /* Colors */
+  --color-bg: #FFFFFF;
+  --color-text: #000000;
+  --color-primary: #D32F2F; /* fire-red */
+  --color-secondary: #212121; /* dark gray */
+  --color-surface: #F8F9FA;
+  --color-border: #E0E0E0;
+
+  /* Typography */
+  --font-family: 'Inter', Roboto, Arial, Helvetica, sans-serif;
+  --font-size-base: 18px;     /* body text */
+  --font-size-heading: 22px;  /* headings */
+  --line-height-base: 1.55;
+
+  /* Spacing */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Elevation */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.10);
+  --shadow-lg: 0 12px 28px rgba(0,0,0,0.14);
+}
+
+/* 3) Base Elements */
+html { font-size: 100%; }
+body {
+  min-height: 100vh;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: var(--font-size-heading);
+  margin: 0 0 var(--space-sm) 0;
+  color: var(--color-text);
+}
+
+p { margin: 0 0 var(--space-md) 0; }
+
+/* Links */
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Force no underline in Staff Manager sidebar */
+.staff-sidebar a,
+.staff-sidebar a:hover,
+.staff-sidebar a:focus,
+.staff-sidebar a:active,
+.staff-sidebar a:visited {
+  text-decoration: none !important;
+}
+
+/* Force no underline in Call Operator system */
+[class*="CallOperator"] a,
+[class*="CallOperator"] a:hover,
+[class*="CallOperator"] a:focus,
+[class*="CallOperator"] a:active,
+[class*="CallOperator"] a:visited,
+[data-testid*="call-operator"] a,
+[data-testid*="call-operator"] a:hover,
+[data-testid*="call-operator"] a:focus,
+[data-testid*="call-operator"] a:active,
+[data-testid*="call-operator"] a:visited {
+  text-decoration: none !important;
+}
+
+/* Force no underline in navigation bars and main page buttons */
+nav a,
+nav a:hover,
+nav a:focus,
+nav a:active,
+nav a:visited,
+.navbar a,
+.navbar a:hover,
+.navbar a:focus,
+.navbar a:active,
+.navbar a:visited,
+[class*="nav"] a,
+[class*="nav"] a:hover,
+[class*="nav"] a:focus,
+[class*="nav"] a:active,
+[class*="nav"] a:visited,
+[class*="NavLink"] a,
+[class*="NavLink"] a:hover,
+[class*="NavLink"] a:focus,
+[class*="NavLink"] a:active,
+[class*="NavLink"] a:visited,
+button a,
+button a:hover,
+button a:focus,
+button a:active,
+button a:visited,
+[class*="emergency"] a,
+[class*="emergency"] a:hover,
+[class*="emergency"] a:focus,
+[class*="emergency"] a:active,
+[class*="emergency"] a:visited {
+  text-decoration: none !important;
+}
+
+/* 4) Layout helpers */
+.page-root { min-height: 100vh; display: flex; flex-direction: column; background: var(--color-bg); }
+.page-content { flex: 1; display: flex; flex-direction: column; }
+.centered { display: flex; align-items: center; justify-content: center; }
+.grid-responsive { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); }
+
+/* 5) Components: Buttons, Inputs, Cards */
+button, .btn {
+  min-height: 48px;
+  padding: 0 var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-primary);
+  background: var(--color-primary);
+  color: #FFFFFF;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background-color .12s ease;
+}
+
+button.secondary, .btn-secondary {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+button.ghost, .btn-ghost {
+  background: transparent;
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+button:disabled { opacity: .6; cursor: not-allowed; }
+button:hover { box-shadow: var(--shadow-sm); transform: translateY(-1px); }
+button:active { transform: translateY(0); }
+
+input, select, textarea {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  min-height: 48px;
+}
+
+label { font-weight: 700; margin-bottom: var(--space-xs); display: inline-block; }
+
+.card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-lg);
+}
+
+/* 6) Accessibility */
+img { max-width: 100%; height: auto; }
+svg, i { font-size: calc(var(--font-size-base) + 4px); }
+
+/* 7) Sticky header/footer helpers */
+.sticky-header { position: sticky; top: 0; z-index: 50; background: var(--color-bg); }
+.sticky-footer { position: sticky; bottom: 0; z-index: 50; background: var(--color-bg); }
+
+/* 8) Utility classes for spacing */
+.mt-lg { margin-top: var(--space-lg); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.py-lg { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+.px-lg { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+
+/* 9) High-contrast focus ring */
+:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
+
+

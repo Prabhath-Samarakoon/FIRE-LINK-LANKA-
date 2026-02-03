@@ -1,0 +1,70 @@
+/* Emergency Banner CSS - Shared across Station Officer pages */
+
+/* Emergency Banner */
+.emergency-banner {
+  background: #dc2626;
+  color: white;
+  text-align: center;
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  animation: emergencyBlink 1s infinite;
+  position: relative;
+  z-index: 1000;
+}
+
+@keyframes emergencyBlink {
+  0%, 50% { 
+    opacity: 1; 
+    background: #dc2626;
+  }
+  25%, 75% { 
+    opacity: 0.7; 
+    background: #ef4444;
+  }
+}
+
+/* Emergency Banner Content */
+.emergency-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.emergency-banner-icon {
+  font-size: 1rem;
+  animation: emergencyShake 1s infinite;
+}
+
+.emergency-banner-text {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@keyframes emergencyShake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .emergency-banner {
+    font-size: 0.75rem;
+    padding: 0.375rem 0;
+  }
+  
+  .emergency-banner-content {
+    gap: 0.25rem;
+    padding: 0 0.5rem;
+  }
+  
+  .emergency-banner-icon {
+    font-size: 0.875rem;
+  }
+}

@@ -1,0 +1,287 @@
+.main-content {
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+  padding-top: 100px; /* Account for fixed header */
+  background: var(--bg-primary);
+  min-height: 100vh;
+  color: var(--text-primary);
+}
+
+.team-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 500px;
+  max-height: 800px;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.team-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: brightness(1.1) contrast(1.1) saturate(1.2);
+}
+
+.team-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 180px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.2) 100%);
+  backdrop-filter: blur(2px);
+}
+
+.team-hero-overlay h1 {
+  color: var(--text-primary);
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-shadow: none;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.team-stats {
+  max-width: 1200px;
+  margin: 60px auto 80px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.stats-header {
+  margin-bottom: 50px;
+}
+
+.stats-header .badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent-yellow), #d97706);
+  color: #111827;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+}
+
+.stats-header h2 {
+  margin: 20px 0 10px;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.stats-header .year {
+  color: var(--text-tertiary);
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 8px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.stats-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+
+/* Staff breakdown grid - 3 columns with specific row layout */
+.staff-breakdown {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+/* Center the total staff in the first row and clear other positions */
+.staff-breakdown .stat-card:first-child {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+}
+
+/* Position firefighters in second row */
+.staff-breakdown .stat-card:nth-child(2) {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+/* Position equipment tech in second row */
+.staff-breakdown .stat-card:nth-child(3) {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+/* Position dispatchers in second row */
+.staff-breakdown .stat-card:nth-child(4) {
+  grid-row: 2;
+  grid-column: 3;
+}
+
+/* Position first aid officer in third row */
+.staff-breakdown .stat-card:nth-child(5) {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+/* Position pump operator in third row */
+.staff-breakdown .stat-card:nth-child(6) {
+  grid-row: 3;
+  grid-column: 2;
+}
+
+/* Position safety officer in third row */
+.staff-breakdown .stat-card:nth-child(7) {
+  grid-row: 3;
+  grid-column: 3;
+}
+
+.stat-card {
+  background: #ffffff;
+  border: 1px solid var(--border-primary);
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, var(--accent-yellow), #d97706);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--border-secondary);
+}
+
+.stat-card:hover::before {
+  transform: scaleX(1);
+}
+
+.stat-card .label {
+  display: inline-block;
+  background: var(--bg-secondary);
+  color: var(--text-tertiary);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.stat-card .value {
+  font-size: 48px;
+  font-weight: 800;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.stat-card .value.accent {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .team-hero {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .team-hero-overlay {
+    padding-left: 40px;
+  }
+  
+  .team-hero-overlay h1 {
+    font-size: 48px;
+    letter-spacing: 2px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  
+  .staff-breakdown {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  
+  .stats-header h2 {
+    font-size: 28px;
+  }
+  
+  .stat-card {
+    padding: 25px 15px;
+  }
+  
+  .stat-card .value {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-hero {
+    height: 40vh;
+    min-height: 300px;
+  }
+  
+  .team-hero-overlay {
+    padding-left: 20px;
+  }
+  
+  .team-hero-overlay h1 {
+    font-size: 36px;
+    letter-spacing: 1px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .staff-breakdown {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .stats-header h2 {
+    font-size: 24px;
+  }
+  
+  .stat-card {
+    padding: 20px 15px;
+  }
+  
+  .stat-card .value {
+    font-size: 32px;
+  }
+}
+

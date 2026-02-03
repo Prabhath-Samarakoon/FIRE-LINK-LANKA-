@@ -1,0 +1,39 @@
+/* Override global input styles for Page1CallIntake */
+.Page1CallIntake input[data-override-styles="true"],
+.Page1CallIntake textarea[data-override-styles="true"] {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  border-color: #d1d5db !important;
+  border: 1px solid #d1d5db !important;
+}
+
+.Page1CallIntake input[data-override-styles="true"]:focus,
+.Page1CallIntake textarea[data-override-styles="true"]:focus {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+}
+
+.Page1CallIntake input[data-override-styles="true"]::placeholder,
+.Page1CallIntake textarea[data-override-styles="true"]::placeholder {
+  color: #6b7280 !important;
+}
+
+/* Force card styling */
+.Page1CallIntake .caller-card {
+  background-color: #ffffff !important;
+  border: 2px solid #3b82f6 !important;
+}
+
+.Page1CallIntake .location-card {
+  background-color: #ffffff !important;
+  border: 2px solid #10b981 !important;
+}
+
+/* Force button styling */
+.Page1CallIntake .next-button {
+  background-color: #dc2626 !important;
+  color: #ffffff !important;
+  border: 3px solid #fbbf24 !important;
+}

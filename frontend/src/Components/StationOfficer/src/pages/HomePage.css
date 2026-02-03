@@ -1,0 +1,699 @@
+/* HomePage.css - Fire Brigade Management System Homepage */
+
+.homepage {
+  min-height: 100vh;
+  background: #f9fafb;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Emergency Banner */
+.emergency-banner {
+  background: #dc2626;
+  color: white;
+  text-align: center;
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  animation: emergencyBlink 1s infinite;
+}
+
+@keyframes emergencyBlink {
+  0%, 50% { 
+    opacity: 1; 
+    background: #dc2626;
+  }
+  25%, 75% { 
+    opacity: 0.7; 
+    background: #ef4444;
+  }
+}
+
+/* Emergency Button Animations */
+@keyframes emergencyPulse {
+  0% {
+    box-shadow: 
+      0 0 0 0 rgba(220, 38, 38, 0.7),
+      0 0 20px rgba(220, 38, 38, 0.5),
+      0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 0 10px rgba(220, 38, 38, 0.3),
+      0 0 30px rgba(220, 38, 38, 0.8),
+      0 15px 40px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    box-shadow: 
+      0 0 0 0 rgba(220, 38, 38, 0.7),
+      0 0 20px rgba(220, 38, 38, 0.5),
+      0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes emergencyGlow {
+  0%, 100% {
+    border-color: #fbbf24;
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
+  }
+  50% {
+    border-color: #f59e0b;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%);
+  }
+}
+
+@keyframes emergencyShake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+
+/* Main Content */
+.homepage-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 0 6rem 0;
+  min-height: calc(100vh - 300px);
+}
+
+.homepage-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Global Item Search */
+.global-search { display: flex; justify-content: flex-end; margin: 1rem 0; width: 100%; position: relative; }
+.search-box { position: relative; width: 320px; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 12px; display: flex; align-items: center; gap: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+.search-icon { width: 18px; height: 18px; color: #6366f1; }
+.search-input { border: none; outline: none; width: 100%; font-size: 14px; }
+.suggestions { position: absolute; top: 56px; right: 0; width: 340px; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.08); overflow: hidden; z-index: 40; }
+.suggestion-row { width: 100%; display: flex; justify-content: space-between; padding: 10px 12px; font-size: 14px; color: #111827; background: #fff; border: none; text-align: left; cursor: pointer; }
+.suggestion-row:hover { background: #f9fafb; }
+.suggestion-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 230px; }
+.suggestion-meta { color: #6b7280; font-size: 12px; margin-left: 8px; }
+.suggestion-empty { padding: 10px 12px; font-size: 14px; color: #6b7280; }
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  margin: 2rem 0 4rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.emergency-button {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
+  border: 3px solid #fbbf24;
+  border-radius: 1.5rem;
+  padding: 1.5rem 3rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 
+    0 0 0 0 rgba(220, 38, 38, 0.7),
+    0 0 20px rgba(220, 38, 38, 0.5),
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 auto;
+  transform: scale(1);
+  position: relative;
+  overflow: hidden;
+  animation: emergencyPulse 2s infinite, emergencyGlow 3s infinite;
+  min-width: 400px;
+}
+
+.emergency-button:hover {
+  transform: scale(1.08);
+  animation: emergencyPulse 1s infinite, emergencyGlow 1.5s infinite, emergencyShake 0.5s infinite;
+  box-shadow: 
+    0 0 0 15px rgba(220, 38, 38, 0.4),
+    0 0 40px rgba(220, 38, 38, 0.9),
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.emergency-button:active {
+  transform: scale(1.02);
+  animation: emergencyShake 0.2s infinite;
+}
+
+.emergency-button.active {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
+  animation: emergencyPulse 1s infinite, emergencyGlow 2s infinite;
+}
+
+/* Danger Warning Indicator */
+.emergency-button::before {
+  content: "⚠️";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 1.5rem;
+  animation: emergencyShake 1s infinite;
+  z-index: 10;
+}
+
+.emergency-button::after {
+  content: "DANGER";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #dc2626;
+  color: #ffffff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2px solid #fbbf24;
+  animation: emergencyPulse 1.5s infinite;
+  z-index: 10;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.button-icon {
+  height: 2rem;
+  width: 2rem;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+  animation: emergencyShake 2s infinite;
+}
+
+.button-text {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.15em;
+}
+
+@media (min-width: 640px) {
+  .emergency-button {
+    padding: 2rem 4rem;
+    font-size: 1.75rem;
+    min-width: 500px;
+  }
+  
+  .button-icon {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  
+  .button-text {
+    font-size: 1.75rem;
+  }
+  
+  .emergency-button::after {
+    font-size: 0.875rem;
+    padding: 0.375rem 1rem;
+  }
+}
+
+/* Emergency Mode Active Section */
+.emergency-mode-active {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.emergency-button.deactivate {
+  background: linear-gradient(90deg, #6b7280 0%, #4b5563 100%);
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  min-width: 300px;
+}
+
+.emergency-button.deactivate:hover {
+  background: linear-gradient(90deg, #4b5563 0%, #374151 100%);
+}
+
+@media (min-width: 640px) {
+  .emergency-mode-active {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  
+  .emergency-button.deactivate {
+    font-size: 1.25rem;
+    padding: 1rem 3rem;
+    min-width: 350px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .emergency-button.deactivate {
+    font-size: 1.5rem;
+    padding: 1.25rem 4rem;
+    min-width: 400px;
+  }
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  width: 100%;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6rem;
+  height: 0.25rem;
+  background: #f97316;
+  border-radius: 0.125rem;
+}
+
+@media (min-width: 640px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* Emergency Contacts */
+.emergency-contacts {
+  margin: 0 0 6rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  width: 100%;
+  justify-items: center;
+}
+
+@media (min-width: 1024px) {
+  .contacts-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contact-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid var(--contact-color);
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Card Color Variants */
+.contact-card.blue {
+  --contact-color: #3b82f6;
+}
+
+.contact-card.green {
+  --contact-color: #10b981;
+}
+
+.contact-card.amber {
+  --contact-color: #f59e0b;
+}
+
+.contact-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-icon-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.contact-icon {
+  font-size: 2rem;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--contact-color);
+  border-radius: 0.75rem;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+  transform: scale(1.05);
+}
+
+.contact-status-indicator {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  width: 1rem;
+  height: 1rem;
+  background: #10b981;
+  border: 2px solid white;
+  border-radius: 50%;
+  animation: pulse-status 2s infinite;
+}
+
+@keyframes pulse-status {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin: 0 0 0.25rem 0;
+  line-height: 1.2;
+}
+
+.contact-role {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-details {
+  margin-bottom: 1rem;
+}
+
+.contact-number-pill {
+  background: #f3f4f6;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.contact-number {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: var(--contact-color);
+  margin: 0;
+  font-family: 'Courier New', monospace;
+}
+
+.contact-description {
+  color: #6b7280;
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* Removed call button styles - no longer needed */
+
+/* Additional Contact Information */
+.contact-additional-info {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.contact-info-row {
+  display: flex;
+  margin-bottom: 0.5rem;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #374151;
+  min-width: 100px;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.info-value {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.contact-card:hover .info-value {
+  color: #4b5563;
+}
+
+
+/* Footer */
+.main-footer {
+  background: #111827;
+  color: white;
+  padding: 3rem 0;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .mobile-menu {
+    display: block;
+  }
+  
+  .header-container {
+    padding: 0 1rem;
+  }
+  
+  .header-content {
+    height: 4rem;
+    padding: 0.5rem 0;
+  }
+  
+  .header-title {
+    font-size: 1rem;
+  }
+  
+  .homepage-container {
+    padding: 0 1rem;
+  }
+  
+  .homepage-main {
+    padding: 1rem 0 4rem 0;
+    min-height: calc(100vh - 200px);
+  }
+  
+  .hero-section {
+    margin: 1rem 0 2rem 0;
+    width: 100%;
+  }
+  
+  .emergency-button {
+    padding: 1.25rem 2rem;
+    font-size: 1.25rem;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .emergency-button::after {
+    font-size: 0.625rem;
+    padding: 0.25rem 0.5rem;
+    top: -20px;
+  }
+  
+  .emergency-button.deactivate {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+  
+  .button-text {
+    font-size: 1.125rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .emergency-contacts {
+    margin: 0 0 3rem 0;
+    width: 100%;
+  }
+  
+  .contacts-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .contact-card {
+    padding: 1rem;
+  }
+  
+  .contact-header {
+    gap: 0.75rem;
+  }
+  
+  .contact-icon {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+  }
+  
+  .contact-name {
+    font-size: 1.125rem;
+  }
+  
+  .contact-number {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    height: 3.5rem;
+    padding: 0.25rem 0;
+  }
+  
+  .header-title {
+    font-size: 0.9rem;
+  }
+  
+  .fire-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  
+  .homepage-main {
+    padding: 0.5rem 0 3rem 0;
+    min-height: calc(100vh - 150px);
+  }
+  
+  .hero-section {
+    margin: 0.5rem 0 1.5rem 0;
+    width: 100%;
+  }
+  
+  .emergency-button {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .emergency-button.deactivate {
+    font-size: 0.875rem;
+    padding: 0.625rem 1rem;
+  }
+  
+  .button-text {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .emergency-contacts {
+    margin: 0 0 2rem 0;
+    width: 100%;
+  }
+  
+  .contact-card {
+    padding: 0.75rem;
+  }
+  
+  .contact-icon {
+    font-size: 1.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .contact-name {
+    font-size: 1rem;
+  }
+  
+  .contact-number {
+    font-size: 0.875rem;
+  }
+  
+  .call-button {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  .main-footer {
+    padding: 2rem 0;
+  }
+}
+

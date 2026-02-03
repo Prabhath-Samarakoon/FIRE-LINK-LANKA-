@@ -1,0 +1,413 @@
+/* Emergency Vehicle Equipment Assignment Styles */
+
+/* Page Layout */
+.assignments-page {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.assignments-content {
+  padding-top: 0;
+}
+
+/* Vehicle Selection Cards */
+.vehicle-card {
+  transition: all 0.2s ease-in-out;
+  border-radius: 12px;
+  border-width: 2px;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-card.selected {
+  border-color: currentColor;
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+/* Equipment Checkboxes */
+.equipment-checkbox {
+  transition: all 0.2s ease-in-out;
+}
+
+.equipment-checkbox:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+  transform: translateX(2px);
+}
+
+/* Category Headers */
+.equipment-category {
+  border-left: 4px solid #3b82f6;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+/* Vehicle Color Coding */
+.vehicle-red {
+  background-color: #ef4444;
+}
+
+/* Confirmed Assignments Modal Styles */
+.confirmed-assignments-modal {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.confirmed-assignment-card {
+  animation: slideUp 0.4s ease-out;
+  transition: all 0.3s ease;
+}
+
+.confirmed-assignment-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.equipment-badge {
+  transition: all 0.2s ease;
+}
+
+.equipment-badge:hover {
+  transform: scale(1.05);
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vehicle-blue {
+  background-color: #3b82f6;
+}
+
+.vehicle-orange {
+  background-color: #f97316;
+}
+
+.vehicle-purple {
+  background-color: #8b5cf6;
+}
+
+.vehicle-green {
+  background-color: #10b981;
+}
+
+.vehicle-navy {
+  background-color: #1e40af;
+}
+
+.vehicle-yellow {
+  background-color: #eab308;
+}
+
+/* Equipment Selection States */
+.equipment-item-selected {
+  background-color: #dbeafe;
+  border-color: #3b82f6;
+}
+
+.equipment-item-hover {
+  background-color: #f8fafc;
+}
+
+/* Assignment Summary */
+.assignment-summary {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.equipment-count {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border: 1px solid #93c5fd;
+}
+
+/* Confirm Button */
+.confirm-button {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  transition: all 0.2s ease-in-out;
+}
+
+.confirm-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.confirm-button:disabled {
+  background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
+  cursor: not-allowed;
+}
+
+/* Loading States */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .vehicle-selection {
+    order: 1;
+  }
+  
+  .equipment-selection {
+    order: 2;
+  }
+  
+  .assignment-summary {
+    order: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .vehicle-card {
+    padding: 1rem;
+  }
+  
+  .vehicle-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+  }
+  
+  .equipment-category {
+    padding: 1rem;
+  }
+  
+  .confirm-button {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Emergency-Ready Typography */
+.emergency-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.emergency-subtitle {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.vehicle-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.equipment-item {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.category-header {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Quick Select Buttons */
+.quick-select-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.quick-select-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.select-all-button {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+}
+
+.clear-all-button {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  color: white;
+}
+
+/* Equipment List Styling */
+.equipment-list {
+  max-height: 16rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+.equipment-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.equipment-list::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.equipment-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.equipment-list::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Success/Error Message Styling */
+.message-container {
+  border-radius: 0.75rem;
+  border-width: 1px;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Vehicle Selection Hover Effects */
+.vehicle-selection-card {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.vehicle-selection-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-selection-card.selected {
+  border-color: currentColor;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Equipment Category Cards */
+.equipment-category-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.equipment-category-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Checkbox Styling */
+.custom-checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #d1d5db;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-checkbox:checked {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.custom-checkbox:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: #3b82f6;
+  ring-offset: 2px;
+}
+
+/* Summary Panel Styling */
+.summary-panel {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.summary-vehicle-info {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+}
+
+.summary-equipment-count {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border: 1px solid #93c5fd;
+  border-radius: 0.5rem;
+}
+
+/* Responsive Grid Adjustments */
+@media (min-width: 1024px) {
+  .assignments-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .assignments-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .vehicle-selection {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 767px) {
+  .assignments-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .vehicle-selection,
+  .equipment-selection,
+  .assignment-summary {
+    grid-column: 1 / -1;
+  }
+}

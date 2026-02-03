@@ -1,0 +1,108 @@
+/* CRUD example — remake for production */
+/* Fire Brigade System Frontend - Inventory Page Styles */
+/* This is a skeleton to show structure & workflows */
+
+.inventory-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.inventory-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.inventory-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.inventory-header h1 {
+  margin: 0 0 0.5rem 0;
+  color: #1f2937;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.inventory-header p {
+  color: #6b7280;
+  font-size: 1.1rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.search-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 160px); /* Reduced from 200px to 160px */
+  gap: 1rem; /* Reduced gap */
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.category-tile {
+  background-color: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.75rem; /* Reduced padding */
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px; /* Reduced from 120px to 100px */
+  width: 160px; /* Reduced from 200px to 160px */
+  box-sizing: border-box;
+}
+
+.category-tile:hover {
+  border-color: #dc2626;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
+  transform: translateY(-2px);
+}
+
+.category-name {
+  margin: 0;
+  color: #1f2937;
+  font-size: 0.8rem; /* Reduced font size */
+  font-weight: 600;
+  line-height: 1.2; /* Reduced line height */
+  text-align: center;
+  padding: 0.25rem; /* Reduced padding */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .inventory-container {
+    padding: 1rem;
+  }
+  
+  .inventory-header h1 {
+    font-size: 2rem;
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(auto-fit, 130px); /* Reduced from 150px to 130px */
+    gap: 0.75rem; /* Reduced gap */
+  }
+  
+  .category-tile {
+    padding: 0.5rem; /* Reduced padding */
+    height: 80px; /* Reduced from 100px to 80px */
+    width: 130px; /* Reduced from 150px to 130px */
+  }
+  
+  .category-name {
+    font-size: 0.7rem; /* Reduced font size */
+  }
+}
